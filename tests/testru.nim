@@ -1,15 +1,5 @@
 import unittest
-import loco
-
-
-loco ru:
-  hello: "привет"
-  users:
-    zero: "ни одного пользователя"
-    one: "{n} пользователь"
-    few: "{n} пользователя"
-    many: "{n} пользователей"
-
+import localizations/ru_RU
 
 suite "Russian localization":
   test "Simple lang var":

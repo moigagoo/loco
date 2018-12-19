@@ -1,14 +1,5 @@
 import unittest
-import loco
-
-
-loco en:
-  hello: "hello"
-  users:
-    zero: "no users"
-    one: "{n} user"
-    many: "{n} users"
-
+import localizations/en_US
 
 suite "English localization":
   test "Simple lang var":
