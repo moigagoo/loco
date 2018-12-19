@@ -18,12 +18,12 @@ macro loco*(lang, body: untyped): untyped =
 
   .. code-block:: nim
 
-    loco en:
-      hello: "hello"
-      users:
-        zero: "no users"
-        one: "{n} user"
-        many: "{n} users"
+      loco en:
+        hello: "hello"
+        users:
+          zero: "no users"
+          one: "{n} user"
+          many: "{n} users"
 
   For each declaration, a function of the same name is generated. For simple declarations, like ``hello``, the function has no arguments. For complex declarations that depend on quantity, there's a single argument ``n: int``.
 
@@ -33,7 +33,7 @@ macro loco*(lang, body: untyped): untyped =
 
   .. code-block:: nim
 
-    echo 0.users # prints "no users"
+      echo 0.users # prints "no users"
   ]##
 
   result = newStmtList()
