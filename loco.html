@@ -16,7 +16,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>Module loco</title>
+<title>loco</title>
 <style type="text/css" >
 /*
 Stylesheet for use with Docutils/rst2html.
@@ -1199,7 +1199,7 @@ span.pragmawrap {
 
 </style>
 
-<script type="text/javascript" src="../dochack.js"></script>
+<script type="text/javascript" src="dochack.js"></script>
 
 <script type="text/javascript">
 function main() {
@@ -1219,7 +1219,7 @@ function main() {
 <body onload="main()">
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">Module loco</h1>
+    <h1 class="title">loco</h1>
     <div class="row">
   <div class="three columns">
   <div id="global-links">
@@ -1241,7 +1241,7 @@ function main() {
 <li>
   <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
   <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#loco.m,untyped,untyped"
+      <li><a class="reference" href="#loco.m%2Cuntyped%2Cuntyped"
     title="loco(lang, body: untyped): untyped"><wbr />loco<span class="attachedType" style="visibility:hidden"></span></a></li>
 
   </ul>
@@ -1256,7 +1256,8 @@ function main() {
   <div class="section" id="17">
 <h1><a class="toc-backref" href="#17">Macros</a></h1>
 <dl class="item">
-<dt id="loco"><a name="loco.m,untyped,untyped"></a><pre><span class="Keyword">macro</span> <span class="Identifier">loco</span><span class="Other">(</span><span class="Identifier">lang</span><span class="Other">,</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
+<a id="loco.m,untyped,untyped"></a>
+<dt><pre><span class="Keyword">macro</span> <span class="Identifier">loco</span><span class="Other">(</span><span class="Identifier">lang</span><span class="Other">,</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
 <dd>
 Declare localizations for <tt class="docutils literal"><span class="pre">lang</span></tt>:<pre class="listing"><span class="Identifier">loco</span> <span class="Identifier">en</span><span class="Punctuation">:</span>
   <span class="Identifier">hello</span><span class="Punctuation">:</span> <span class="StringLit">&quot;hello&quot;</span>
@@ -1264,7 +1265,7 @@ Declare localizations for <tt class="docutils literal"><span class="pre">lang</s
     <span class="Identifier">zero</span><span class="Punctuation">:</span> <span class="StringLit">&quot;no users&quot;</span>
     <span class="Identifier">one</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} user&quot;</span>
     <span class="Identifier">many</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} users&quot;</span></pre><p>For each declaration, a function of the same name is generated. For simple declarations, like <tt class="docutils literal"><span class="pre">hello</span></tt>, the function has no arguments. For complex declarations that depend on quantity, there's a single argument <tt class="docutils literal"><span class="pre">n: int</span></tt>.</p>
-<p>Four <em>tiers</em> can be used in complex declarations: <tt class="docutils literal"><span class="pre">zero</span></tt>, <tt class="docutils literal"><span class="pre">one</span></tt>, <tt class="docutils literal"><span class="pre">few</span></tt>, and <tt class="docutils literal"><span class="pre">many</span></tt>. Whether you use all of them or just some, depends on the language. In Russian, all four are necessary. In English, <tt class="docutils literal"><span class="pre">few</span></tt> is not required. The tiers are utilized in <tt class="docutils literal"><span class="pre">pluralize</span></tt> templates for each language.</p>
+<p>Four tiers can be used in complex declarations: <tt class="docutils literal"><span class="pre">zero</span></tt>, <tt class="docutils literal"><span class="pre">one</span></tt>, <tt class="docutils literal"><span class="pre">few</span></tt>, and <tt class="docutils literal"><span class="pre">many</span></tt>. Whether you use all of them or just some, depends on the language. In Russian, all four are necessary. In English, <tt class="docutils literal"><span class="pre">few</span></tt> is not required. The tiers are utilized in <tt class="docutils literal"><span class="pre">pluralize</span></tt> templates for each language.</p>
 <p>Tier translations are declared in <tt class="docutils literal"><span class="pre">strformat</span></tt> syntax with <tt class="docutils literal"><span class="pre">{n}</span></tt> being replaced with the number you pass to the generated function:</p>
 <pre class="listing"><span class="Identifier">echo</span> <span class="FloatNumber">0.</span><span class="Identifier">users</span> <span class="Comment"># prints &quot;no users&quot;</span></pre>
 
@@ -1279,7 +1280,7 @@ Declare localizations for <tt class="docutils literal"><span class="pre">lang</s
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2018-12-19 13:39:04 UTC</small>
+        <small>Made with Nim. Generated: 2019-01-08 18:37:53 UTC</small>
       </div>
     </div>
   </div>
