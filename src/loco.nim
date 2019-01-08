@@ -25,15 +25,15 @@ macro loco*(lang, body: untyped): untyped =
           one: "{n} user"
           many: "{n} users"
 
-  For each declaration, a function of the same name is generated. For simple declarations, like ``hello``, the function has no arguments. For complex declarations that depend on quantity, there's a single argument ``n: int``.
+  For each declaration, a function of the same name is generated. For simple declarations, like ``hello``, the function has no arguments. For complex declarations that depend on quantity, the function takes a single argument ``n: int``.
 
   Four tiers can be used in complex declarations: ``zero``, ``one``, ``few``, and ``many``. Whether you use all of them or just some, depends on the language. In Russian, all four are necessary. In English, ``few`` is not required. The tiers are utilized in ``pluralize`` templates for each language.
 
-  Tier translations are declared in ``strformat`` syntax with ``{n}`` being replaced with the number you pass to the generated function:
+  Tier translations are declared in ``strformat`` syntax: ``{n}`` is replaced with the number you pass to the generated function:
 
   .. code-block:: nim
 
-      echo 0.users # prints "no users"
+      echo 0.users  # → "no users"
   ]##
 
   result = newStmtList()
