@@ -1,5 +1,7 @@
 import unittest
+
 import localizations/ru_RU
+
 
 suite "Russian localization":
   test "Simple lang var":

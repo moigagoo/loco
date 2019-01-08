@@ -1,5 +1,7 @@
 import unittest
+
 import localizations/en_US
+
 
 suite "English localization":
   test "Simple lang var":
