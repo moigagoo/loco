@@ -1,4 +1,4 @@
-# Loco: Localization Package for Nim Apps
+# Loco: Localization Package for Nim
 
 Loco helps localize Nim apps. Uses classic declaratively defined "zero-one-few-many" language variables, but thanks to Nim's superpowers, you also have code completion and compilation checks for language variables.
 
