@@ -3,5 +3,5 @@ template pluralize*(n: int): untyped =
 
   case n
   of 0: zero n
-  of 1: one n
+  of 1, -1: one n
   else: many n
