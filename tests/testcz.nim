@@ -34,7 +34,7 @@ suite "Czech localization":
     check 121.users == "121 uživatelů"
     check 122.users == "122 uživatelů"
 
-  test "Complex lang var with negatiive values":
+  test "Complex lang var with negative values":
     check (-1).users == "-1 uživatel"
     check (-2).users == "-2 uživatelé"
     check (-3).users == "-3 uživatelé"
