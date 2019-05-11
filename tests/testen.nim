@@ -27,7 +27,7 @@ suite "English localization":
     check 121.users == "121 users"
     check 122.users == "122 users"
 
-  test "Complex lang var with negatiive values":
+  test "Complex lang var with negative values":
     check (-1).users == "-1 user"
     check (-2).users == "-2 users"
     check (-10).users == "-10 users"

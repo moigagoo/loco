@@ -1,0 +1,61 @@
+import unittest
+
+import localizations/cs_CZ
+
+
+suite "Czech localization":
+  test "Simple lang var":
+    check hello() == "ahoj"
+
+  test "Complex lang var":
+    check 0.users == "0 uživatelů"
+    check 1.users == "1 uživatel"
+    check 2.users == "2 uživatelé"
+    check 3.users == "3 uživatelé"
+    check 4.users == "4 uživatelé"
+    check 5.users == "5 uživatelů"
+    check 6.users == "6 uživatelů"
+    check 7.users == "7 uživatelů"
+    check 8.users == "8 uživatelů"
+    check 9.users == "9 uživatelů"
+    check 10.users == "10 uživatelů"
+    check 11.users == "11 uživatelů"
+    check 12.users == "12 uživatelů"
+    check 20.users == "20 uživatelů"
+    check 21.users == "21 uživatelů"
+    check 22.users == "22 uživatelů"
+    check 100.users == "100 uživatelů"
+    check 101.users == "101 uživatelů"
+    check 102.users == "102 uživatelů"
+    check 110.users == "110 uživatelů"
+    check 111.users == "111 uživatelů"
+    check 112.users == "112 uživatelů"
+    check 120.users == "120 uživatelů"
+    check 121.users == "121 uživatelů"
+    check 122.users == "122 uživatelů"
+
+  test "Complex lang var with negative values":
+    check (-1).users == "-1 uživatel"
+    check (-2).users == "-2 uživatelé"
+    check (-3).users == "-3 uživatelé"
+    check (-4).users == "-4 uživatelé"
+    check (-5).users == "-5 uživatelů"
+    check (-6).users == "-6 uživatelů"
+    check (-7).users == "-7 uživatelů"
+    check (-8).users == "-8 uživatelů"
+    check (-9).users == "-9 uživatelů"
+    check (-10).users == "-10 uživatelů"
+    check (-11).users == "-11 uživatelů"
+    check (-12).users == "-12 uživatelů"
+    check (-20).users == "-20 uživatelů"
+    check (-21).users == "-21 uživatelů"
+    check (-22).users == "-22 uživatelů"
+    check (-100).users == "-100 uživatelů"
+    check (-101).users == "-101 uživatelů"
+    check (-102).users == "-102 uživatelů"
+    check (-110).users == "-110 uživatelů"
+    check (-111).users == "-111 uživatelů"
+    check (-112).users == "-112 uživatelů"
+    check (-120).users == "-120 uživatelů"
+    check (-121).users == "-121 uživatelů"
+    check (-122).users == "-122 uživatelů"
