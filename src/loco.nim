@@ -1,5 +1,4 @@
 import macros, strformat
-import loco / [en, ru, cz]
 
 
 template importLang(lang: untyped): untyped =
