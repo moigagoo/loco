@@ -1264,10 +1264,10 @@ Declare localizations for <tt class="docutils literal"><span class="pre">lang</s
   <span class="Identifier">users</span><span class="Punctuation">:</span>
     <span class="Identifier">zero</span><span class="Punctuation">:</span> <span class="StringLit">&quot;no users&quot;</span>
     <span class="Identifier">one</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} user&quot;</span>
-    <span class="Identifier">many</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} users&quot;</span></pre><p>For each declaration, a function of the same name is generated. For simple declarations, like <tt class="docutils literal"><span class="pre">hello</span></tt>, the function has no arguments. For complex declarations that depend on quantity, there's a single argument <tt class="docutils literal"><span class="pre">n: int</span></tt>.</p>
+    <span class="Identifier">many</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} users&quot;</span></pre><p>For each declaration, a function of the same name is generated. For simple declarations, like <tt class="docutils literal"><span class="pre">hello</span></tt>, the function has no arguments. For complex declarations that depend on quantity, the function takes a single argument <tt class="docutils literal"><span class="pre">n: int</span></tt>.</p>
 <p>Four tiers can be used in complex declarations: <tt class="docutils literal"><span class="pre">zero</span></tt>, <tt class="docutils literal"><span class="pre">one</span></tt>, <tt class="docutils literal"><span class="pre">few</span></tt>, and <tt class="docutils literal"><span class="pre">many</span></tt>. Whether you use all of them or just some, depends on the language. In Russian, all four are necessary. In English, <tt class="docutils literal"><span class="pre">few</span></tt> is not required. The tiers are utilized in <tt class="docutils literal"><span class="pre">pluralize</span></tt> templates for each language.</p>
-<p>Tier translations are declared in <tt class="docutils literal"><span class="pre">strformat</span></tt> syntax with <tt class="docutils literal"><span class="pre">{n}</span></tt> being replaced with the number you pass to the generated function:</p>
-<pre class="listing"><span class="Identifier">echo</span> <span class="FloatNumber">0.</span><span class="Identifier">users</span> <span class="Comment"># prints &quot;no users&quot;</span></pre>
+<p>Tier translations are declared in <tt class="docutils literal"><span class="pre">strformat</span></tt> syntax: <tt class="docutils literal"><span class="pre">{n}</span></tt> is replaced with the number you pass to the generated function:</p>
+<pre class="listing"><span class="Identifier">echo</span> <span class="FloatNumber">0.</span><span class="Identifier">users</span>  <span class="Comment"># → &quot;no users&quot;</span></pre>
 
 </dd>
 
@@ -1280,7 +1280,7 @@ Declare localizations for <tt class="docutils literal"><span class="pre">lang</s
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2019-01-08 18:37:53 UTC</small>
+        <small>Made with Nim. Generated: 2019-05-11 18:41:46 UTC</small>
       </div>
     </div>
   </div>
