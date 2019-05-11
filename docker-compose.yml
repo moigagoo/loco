@@ -1,0 +1,19 @@
+version: '3'
+services:
+  tests:
+    image: nimlang/nim
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: nimble test
+  test:
+    image: nimlang/nim
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    entrypoint: nim c -r
+  docs:
+    image: nimlang/nim
+    volumes:
+      - .:/usr/src/app
+    command: "nim doc --project /usr/src/app/src/loco.nim"
