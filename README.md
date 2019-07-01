@@ -21,9 +21,6 @@ Loco helps localize Nim apps. Uses classic declaratively defined "zero-one-few-m
 
     Argument `en` is the name of a *pluralizer*. Pluralizer is a module in `loco` that defines pluralization rules for a particural language.
 
-
-        As of version 0.1.0, Loco ships with two pluralizers: `en` for English and `ru` for Russian. Contributions are very welcome.
-
 2.  Use them in your code as regular functions:
 
     ```nim
