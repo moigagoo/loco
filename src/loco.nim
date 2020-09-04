@@ -1,4 +1,10 @@
+{.warning[UnusedImport]: off.}
+
 import macros, strformat
+
+from loco/cz import nil
+from loco/en import nil
+from loco/ru import nil
 
 
 template importLang(lang: untyped): untyped =

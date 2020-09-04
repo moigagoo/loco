@@ -16,4 +16,4 @@ services:
     image: nimlang/nim
     volumes:
       - .:/usr/src/app
-    command: "nim doc --project /usr/src/app/src/loco.nim"
+    command: "nimble docs"

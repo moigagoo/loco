@@ -1,5 +1,12 @@
+.vscode
+*.sublime-project
+*.sublime-workspace
+
 *.exe
 *.html
+*.idx
+htmldocs
+
 tests/testen
 tests/testru
 tests/testcz
