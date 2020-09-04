@@ -62,7 +62,8 @@ Argument ``en`` is the name of a *pluralizer*. Pluralizer is a module in ``loco`
     echo "there's " & 12.users  # → "there's 12 users"
 
 
-## Contributing
+Contributing
+============
 
 Any contributions are welcome, be it pull requests, code reviews, documentation improvements, bug reports, or feature requests.
 
@@ -76,7 +77,8 @@ If you decide to contribute through code, please run the tests after you change 
     $ nim c -r tests/testen.nim                 # run a single test suite natively
 
 
-### ❤ Contributors ❤
+❤ Contributors ❤
+==================
 
 - `@moigagoo <https://github.com/moigagoo>`__
 - `@Nindaleth <https://github.com/Nindaleth>`__
