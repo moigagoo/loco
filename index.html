@@ -17,7 +17,7 @@
 <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,500,600' rel='stylesheet' type='text/css'/>
 
 <!-- CSS -->
-<title>loco</title>
+<title>Loco: Localization Package for Nim</title>
 <link rel="stylesheet" type="text/css" href="nimdoc.out.css">
 
 <script type="text/javascript" src="dochack.js"></script>
@@ -71,92 +71,54 @@ function main() {
 <body onload="main()">
 <div class="document" id="documentId">
   <div class="container">
-    <h1 class="title">loco</h1>
-    <div class="row">
-  <div class="three columns">
-  <div class="theme-switch-wrapper">
-    <label class="theme-switch" for="checkbox">
-      <input type="checkbox" id="checkbox" />
-      <div class="slider round"></div>
-    </label>
-    &nbsp;&nbsp;&nbsp; <em>Dark Mode</em>
-  </div>
-  <div id="global-links">
-    <ul class="simple">
-    </ul>
-  </div>
-  <div id="searchInputDiv">
-    Search: <input type="text" id="searchInput"
-      onkeyup="search()" />
-  </div>
-  <div>
-    Group by:
-    <select onchange="groupBy(this.value)">
-      <option value="section">Section</option>
-      <option value="type">Type</option>
-    </select>
-  </div>
-  <ul class="simple simple-toc" id="toc-list">
-<li>
-  <a class="reference reference-toplevel" href="#6" id="56">Imports</a>
-  <ul class="simple simple-toc-section">
-    
-  </ul>
+    <h1 class="title">Loco: Localization Package for Nim</h1>
+    <img src="https://travis-ci.com/moigagoo/loco.svg?branch=develop" alt="Build Status"/><img src="https://raw.githubusercontent.com/yglukhov/nimble-tag/master/nimble.png" alt="Nimble"/><p>Loco helps localize Nim apps. Uses classic declaratively defined &quot;zero-one-few-many&quot; language variables, but thanks to Nim's superpowers, you also have code completion and compilation checks for language variables.</p>
+<ul class="simple"><li><a class="reference external" href="https://github.com/moigagoo/loco">Repo</a><ul class="simple"><li><a class="reference external" href="https://github.com/moigagoo/loco/issues">Issues</a></li>
+<li><a class="reference external" href="https://github.com/moigagoo/loco/pulls">Pull requests</a></li>
+</ul>
 </li>
-<li>
-  <a class="reference reference-toplevel" href="#17" id="67">Macros</a>
-  <ul class="simple simple-toc-section">
-      <li><a class="reference" href="#loco.m%2Cuntyped%2Cuntyped"
-    title="loco(lang, body: untyped): untyped"><wbr />loco<span class="attachedType"></span></a></li>
-
-  </ul>
-</li>
-
+<li><a class="reference external" href="theindex.html">API index</a></li>
+<li><a class="reference external" href="https://github.com/moigagoo/loco/blob/develop/changelog.rst">Changelog</a></li>
 </ul>
 
-  </div>
-  <div class="nine columns" id="content">
-  <div id="tocRoot"></div>
-  
-  <p class="module-desc"></p>
-  <div class="section" id="6">
-<h1><a class="toc-backref" href="#6">Imports</a></h1>
-<dl class="item">
-<a class="reference external" href="loco/cz.html">loco/cz</a>, <a class="reference external" href="loco/en.html">loco/en</a>, <a class="reference external" href="loco/ru.html">loco/ru</a>
-</dl></div>
-<div class="section" id="17">
-<h1><a class="toc-backref" href="#17">Macros</a></h1>
-<dl class="item">
-<a id="loco.m,untyped,untyped"></a>
-<dt><pre><span class="Keyword">macro</span> <a href="#loco.m%2Cuntyped%2Cuntyped"><span class="Identifier">loco</span></a><span class="Other">(</span><span class="Identifier">lang</span><span class="Other">,</span> <span class="Identifier">body</span><span class="Other">:</span> <span class="Identifier">untyped</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">untyped</span></pre></dt>
-<dd>
+<h1 id="quickstart">Quickstart</h1><p>1.  Install Loco with Nimble:</p>
+<pre class="listing"><span class="Operator">$</span> <span class="Identifier">nimble</span> <span class="Identifier">install</span> <span class="Identifier">loco</span></pre><p>2.  Define localizations with <tt class="docutils literal"><span class="pre">loco</span></tt> macro:</p>
+<pre class="listing"><span class="Comment"># en_US.nim</span>
 
-Declare localizations for <tt class="docutils literal"><span class="pre">lang</span></tt>:<pre class="listing"><span class="Identifier">loco</span> <span class="Identifier">en</span><span class="Punctuation">:</span>
+<span class="Keyword">import</span> <span class="Identifier">loco</span>
+
+<span class="Identifier">loco</span> <span class="Identifier">en</span><span class="Punctuation">:</span>
   <span class="Identifier">hello</span><span class="Punctuation">:</span> <span class="StringLit">&quot;hello&quot;</span>
   <span class="Identifier">users</span><span class="Punctuation">:</span>
     <span class="Identifier">zero</span><span class="Punctuation">:</span> <span class="StringLit">&quot;no users&quot;</span>
     <span class="Identifier">one</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} user&quot;</span>
-    <span class="Identifier">many</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} users&quot;</span></pre><p>For each declaration, a function of the same name is generated. For simple declarations, like <tt class="docutils literal"><span class="pre">hello</span></tt>, the function has no arguments. For complex declarations that depend on quantity, the function takes a single argument <tt class="docutils literal"><span class="pre">n: int</span></tt>.</p>
-<p>Four tiers can be used in complex declarations: <tt class="docutils literal"><span class="pre">zero</span></tt>, <tt class="docutils literal"><span class="pre">one</span></tt>, <tt class="docutils literal"><span class="pre">few</span></tt>, and <tt class="docutils literal"><span class="pre">many</span></tt>. Whether you use all of them or just some, depends on the language. In Russian, all four are necessary. In English, <tt class="docutils literal"><span class="pre">few</span></tt> is not required. The tiers are utilized in <tt class="docutils literal"><span class="pre">pluralize</span></tt> templates for each language.</p>
-<p>Tier translations are declared in <tt class="docutils literal"><span class="pre">strformat</span></tt> syntax: <tt class="docutils literal"><span class="pre">{n}</span></tt> is replaced with the number you pass to the generated function:</p>
-<pre class="listing"><span class="Identifier">echo</span> <span class="FloatNumber">0.</span><span class="Identifier">users</span>  <span class="Comment"># → &quot;no users&quot;</span></pre>
-&nbsp;&nbsp;<a
-href="https :// github.com / moigagoo / loco / --git.commit/tree/version-1-2/src/loco.nim#L22"
-class="link-seesrc" target="_blank">Source</a>
-<a href="https :// github.com / moigagoo / loco / --git.commit/edit/devel/src/loco.nim#L22" class="link-seesrc" target="_blank" >Edit</a>
+    <span class="Identifier">many</span><span class="Punctuation">:</span> <span class="StringLit">&quot;{n} users&quot;</span></pre><p>Argument <tt class="docutils literal"><span class="pre">en</span></tt> is the name of a <em>pluralizer</em>. Pluralizer is a module in <tt class="docutils literal"><span class="pre">loco</span></tt> that defines pluralization rules for a particural language.</p>
+<p>3.  Use them in your code as regular functions:</p>
+<pre class="listing"><span class="Comment"># app.nim</span>
 
-</dd>
+<span class="Keyword">import</span> <span class="Identifier">en_US</span>
 
-</dl></div>
+<span class="Identifier">echo</span> <span class="Identifier">hello</span><span class="Punctuation">(</span><span class="Punctuation">)</span> <span class="Operator">&amp;</span> <span class="StringLit">&quot; world&quot;</span>     <span class="Comment"># → &quot;hello world&quot;</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;there's &quot;</span> <span class="Operator">&amp;</span> <span class="FloatNumber">0.</span><span class="Identifier">users</span>   <span class="Comment"># → &quot;there's no users&quot;</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;there's &quot;</span> <span class="Operator">&amp;</span> <span class="FloatNumber">1.</span><span class="Identifier">users</span>   <span class="Comment"># → &quot;there's 1 user&quot;</span>
+<span class="Identifier">echo</span> <span class="StringLit">&quot;there's &quot;</span> <span class="Operator">&amp;</span> <span class="FloatNumber">12.</span><span class="Identifier">users</span>  <span class="Comment"># → &quot;there's 12 users&quot;</span></pre>
+<h2 id="contributing">Contributing</h2><p>Any contributions are welcome, be it pull requests, code reviews, documentation improvements, bug reports, or feature requests.</p>
+<p>If you decide to contribute through code, please run the tests after you change the code:</p>
+<pre class="listing"><span class="Operator">$</span> <span class="Identifier">docker</span><span class="Operator">-</span><span class="Identifier">compose</span> <span class="Identifier">run</span> <span class="Identifier">tests</span>                  <span class="Comment"># run all tests in Docker</span>
+<span class="Operator">$</span> <span class="Identifier">docker</span><span class="Operator">-</span><span class="Identifier">compose</span> <span class="Identifier">run</span> <span class="Identifier">test</span> <span class="Identifier">tests</span><span class="Operator">/</span><span class="Identifier">testen</span><span class="Operator">.</span><span class="Identifier">nim</span>  <span class="Comment"># run a single test suite in Docker</span>
+<span class="Operator">$</span> <span class="Identifier">nimble</span> <span class="Identifier">test</span>                               <span class="Comment"># run all tests natively</span>
+<span class="Operator">$</span> <span class="Identifier">nim</span> <span class="Identifier">c</span> <span class="Operator">-</span><span class="Identifier">r</span> <span class="Identifier">tests</span><span class="Operator">/</span><span class="Identifier">testen</span><span class="Operator">.</span><span class="Identifier">nim</span>                 <span class="Comment"># run a single test suite natively</span></pre>
+<h3 id="❤-contributors-❤">❤ Contributors ❤</h3><ul class="simple"><li><a class="reference external" href="https://github.com/moigagoo">@moigagoo</a></li>
+<li><a class="reference external" href="https://github.com/Nindaleth">@Nindaleth</a></li>
+</ul>
 
-  </div>
-</div>
+
 
     <div class="row">
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-04 07:09:29 UTC</small>
+        <small style="color: var(--hint);">Made with Nim. Generated: 2020-09-04 07:09:30 UTC</small>
       </div>
     </div>
   </div>
