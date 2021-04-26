@@ -52,6 +52,7 @@ Argument ``en`` is the name of a *pluralizer*. Pluralizer is a module in ``loco`
 3.  Use them in your code as regular functions:
 
 .. code-block:: nim
+
     # app.nim
 
     import en_US
